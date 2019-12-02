@@ -1,16 +1,15 @@
 package repository;
 
-import model.StockModel;
+import model.Stock;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
 import java.util.List;
 
 @Repository
-public interface StockRepository extends PagingAndSortingRepository<StockModel, Integer> {
+public interface StockRepository extends PagingAndSortingRepository<Stock, Integer> {
 
-    StockModel findByStockID(long stockID);
-    List<StockModel> findAllByEdrpou(int erdpou, Pageable pageable);
+    Stock findByStockID(long stockID);
+    List<Stock> findAllByEdrpou(int erdpou, Pageable pageable);
 }

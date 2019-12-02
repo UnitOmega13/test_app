@@ -1,28 +1,27 @@
 package dao;
 
-import model.StockModel;
+import model.Stock;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Repository
 public class StockDAO {
-    private static final Map<String, StockModel> stockMap = new HashMap<String, StockModel>();
+    private static final Map<String, Stock> stockMap = new HashMap<String, Stock>();
 
-    public StockModel addStock(StockModel stock) {
+    public Stock addStock(Stock stock) {
         stockMap.put(stock.getComment(), stock);
         return stock;
     }
 
-    public StockModel updateStock(StockModel stock) {
+    public Stock updateStock(Stock stock) {
         stockMap.put(stock.getComment(), stock);
         return stock;
     }
 
-    public List<StockModel> getAllStocks() {
-        Collection<StockModel> collection = stockMap.values();
-        List<StockModel> list = new ArrayList<StockModel>();
+    public List<Stock> getAllStocks() {
+        Collection<Stock> collection = stockMap.values();
+        List<Stock> list = new ArrayList<Stock>();
         list.addAll(collection);
         return list;
     }

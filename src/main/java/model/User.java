@@ -16,10 +16,6 @@ public class User extends AbstractAuditable<User, Long> {
         return name;
     }
 
-    public void setName(String data) {
-        this.name = data;
-    }
-
     @Override
     public String toString() {
         return "User {" +
