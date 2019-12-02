@@ -1,10 +1,10 @@
-package controller;
+package max.hruslov.controller;
 
-import dao.StockDAO;
-import model.Stock;
+import max.hruslov.model.Stock;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import repository.StockRepository;
+import max.hruslov.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,26 +17,22 @@ public class StockController {
     @Autowired
     StockRepository stockRepository;
 
-    @Autowired
-    StockDAO stockDAO;
-
     @PostMapping("/stock/create")
     @ResponseBody
     public Stock create(@RequestBody Stock request){
-        return stockDAO.addStock(request);
+        return stockRepository.save(request);
     }
 
     @PutMapping("/stock/update")
     @ResponseBody
     public Stock update(@RequestBody Stock request){
-        stockRepository.save(request);
-        return stockDAO.updateStock(request);
+        return stockRepository.save(request);
     }
 
     @RequestMapping("/allStock")
     @ResponseBody
-    public List<Stock> getAll(){
-        return stockDAO.getAllStocks();
+    public Page<Stock> getAll(){
+        return stockRepository.findAll(new PageRequest(0, 20));
     }
 
     @RequestMapping("/allStocks/{erdpou}")

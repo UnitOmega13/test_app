@@ -1,6 +1,6 @@
-package service;
+package max.hruslov.service;
 
-import model.User;
+import max.hruslov.model.User;
 
 public interface CurrentUserService {
 

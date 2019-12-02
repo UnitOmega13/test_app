@@ -1,18 +1,20 @@
-package model;
+package max.hruslov.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Getter @Setter @AllArgsConstructor
+@Table(name = "STOCKS")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Stock {
+
     @Id
     @GeneratedValue
     private Long stockID;
@@ -24,7 +26,5 @@ public class Stock {
     private double nominalCost;
     private double dutyPaid;
     private Date prodactionDate;
-
-    public Stock(){}
 
 }

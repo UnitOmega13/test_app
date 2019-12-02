@@ -1,9 +1,9 @@
-package Auditor;
+package max.hruslov.Auditor;
 
-import model.User;
+import max.hruslov.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.AuditorAware;
-import service.CurrentUserService;
+import max.hruslov.service.CurrentUserService;
 
 import java.util.Optional;
 

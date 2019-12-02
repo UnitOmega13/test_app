@@ -1,6 +1,6 @@
-package config;
+package max.hruslov.config;
 
-import Auditor.AuditorAwareImpl;
+import max.hruslov.Auditor.AuditorAwareImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
