@@ -43,7 +43,7 @@ public class StockController {
 
     @RequestMapping("/allStocks/{erdpou}/{stockID}")
     @ResponseBody
-    public Stock getStockByERDPOUandID(@PathVariable("erdpou") int erdpou, int stockID, int page, int size){
+    public Stock getStockByERDPOUandID(@PathVariable("erdpou") int erdpou, @PathVariable("stockID") int stockID, int page, int size){
         return stockRepository.findAllByEdrpou(erdpou, PageRequest.of(page, size)).get(stockID);
     }
 
@@ -58,4 +58,5 @@ public class StockController {
     public Stock getStockByID(@PathVariable("stockID") long stockID){
         return stockRepository.findByStockID(stockID);
     }
+
 }
