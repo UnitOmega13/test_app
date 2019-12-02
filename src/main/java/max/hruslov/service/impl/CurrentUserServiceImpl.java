@@ -14,6 +14,6 @@ public class CurrentUserServiceImpl implements CurrentUserService {
 
     @Override
     public User getCurrentUser() {
-        return userRepository.findAllById(1L);
+        return userRepository.findAllByUserID(1L);
     }
 }
