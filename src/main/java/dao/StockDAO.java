@@ -7,7 +7,7 @@ import java.util.*;
 
 @Repository
 public class StockDAO {
-    private static final Map<String, Stock> stockMap = new HashMap<String, Stock>();
+    private static final Map<String, Stock> stockMap = new HashMap<>();
 
     public Stock addStock(Stock stock) {
         stockMap.put(stock.getComment(), stock);
@@ -21,8 +21,7 @@ public class StockDAO {
 
     public List<Stock> getAllStocks() {
         Collection<Stock> collection = stockMap.values();
-        List<Stock> list = new ArrayList<Stock>();
-        list.addAll(collection);
+        List<Stock> list = new ArrayList<>(collection);
         return list;
     }
 }

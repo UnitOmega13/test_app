@@ -1,13 +1,18 @@
 package model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
+@Getter @Setter @AllArgsConstructor
 public class Stock {
-
     @Id
     @GeneratedValue
     private Long stockID;
@@ -20,7 +25,6 @@ public class Stock {
     private double dutyPaid;
     private Date prodactionDate;
 
-    public String getComment() {
-        return comment;
-    }
+    public Stock(){}
+
 }
