@@ -8,8 +8,13 @@ import max.hruslov.service.CurrentUserService;
 import java.util.Optional;
 
 public class AuditorAwareImpl implements AuditorAware<User> {
-    @Autowired
+
     private CurrentUserService currentUserService;
+
+    @Autowired
+    public void currentUserServiceDI(CurrentUserService currentUserService){
+        this.currentUserService = currentUserService;
+    }
 
     @Override
     public Optional<User> getCurrentAuditor() {

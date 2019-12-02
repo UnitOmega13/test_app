@@ -15,7 +15,12 @@ import java.util.List;
 @RequestMapping("/database")
 public class StockController {
 
-    private final StockRepository stockRepository;
+    private StockRepository stockRepository;
+
+    @Autowired
+    public void stockRepositoryDI(StockRepository stockRepository){
+        this.stockRepository = stockRepository;
+    }
 
     @PostMapping("/stock/create")
     public Stock create(@RequestBody Stock request){
