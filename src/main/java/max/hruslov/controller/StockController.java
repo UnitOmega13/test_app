@@ -1,5 +1,6 @@
 package max.hruslov.controller;
 
+import lombok.RequiredArgsConstructor;
 import max.hruslov.model.Stock;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -10,11 +11,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/database")
 public class StockController {
 
-    @Autowired
-    StockRepository stockRepository;
+    private final StockRepository stockRepository;
 
     @PostMapping("/stock/create")
     public Stock create(@RequestBody Stock request){
