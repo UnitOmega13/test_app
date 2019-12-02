@@ -1,7 +1,6 @@
 package max.hruslov.controller;
 
 import max.hruslov.model.Stock;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import max.hruslov.repository.StockRepository;
@@ -31,8 +30,8 @@ public class StockController {
 
     @RequestMapping("/allStock")
     @ResponseBody
-    public Page<Stock> getAll(){
-        return stockRepository.findAll(new PageRequest(0, 20));
+    public Iterable<Stock> getAll(){
+        return stockRepository.findAll();
     }
 
     @RequestMapping("/allStocks/{erdpou}")
